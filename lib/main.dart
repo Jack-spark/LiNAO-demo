@@ -84,15 +84,55 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
   // the platform toggles.
   //
   // This isn't needed for apps that doesn't toggle platforms while running.
-  final songsTabKey = GlobalKey();
+  final SongsTabKey = GlobalKey();
 
   // In Material, this app uses the hamburger menu paradigm and flatly lists
   // all 4 possible tabs. This drawer is injected into the songs tab which is
   // actually building the scaffold around the drawer.
   Widget _buildAndroidHomePage(BuildContext context) {
-    return SongsTab(
-      key: songsTabKey,
-      androidDrawer: _AndroidDrawer(),
+    return CupertinoTabScaffold(
+      tabBar: CupertinoTabBar(
+        items: [
+          BottomNavigationBarItem(
+            label: '主页',
+            icon: Image.asset('assets/zhuye.png'),
+          ),
+          BottomNavigationBarItem(
+            label: '冥想'，
+            icon: NewsTab.iosIcon,
+          ),
+          BottomNavigationBarItem(
+            label: ProfileTab.title,
+            icon: ProfileTab.iosIcon,
+          ),
+          BottomNavigationBarItem(
+            label: ProfileTab.title,
+            icon: ProfileTab.iosIcon,
+          ),
+        ],
+      ),
+      tabBuilder: (context, index) {
+        assert(index <= 3 && index >= 0, 'Unexpected tab index: $index');
+        return switch (index) {
+          0 => CupertinoTabView(
+            defaultTitle: '主页',
+            builder: (context) => SongsTab(key: SongsTabKey),
+          ),
+          1 => CupertinoTabView(
+            defaultTitle: '冥想',
+            builder: (context) => const NewsTab(),
+          ),
+          2 => CupertinoTabView(
+            defaultTitle: '课程',
+            builder: (context) => const ProfileTab(),
+          ),
+          3 => CupertinoTabView(
+            defaultTitle: '我的',
+            builder: (context) => const ProfileTab(),
+          ),
+          _ => const SizedBox.shrink(),
+        };
+      },
     );
   }
 
@@ -120,6 +160,10 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
             label: ProfileTab.title,
             icon: ProfileTab.iosIcon,
           ),
+          BottomNavigationBarItem(
+            label: ProfileTab.title,
+            icon: ProfileTab.iosIcon,
+          ),
         ],
       ),
       tabBuilder: (context, index) {
@@ -127,7 +171,7 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
         return switch (index) {
           0 => CupertinoTabView(
               defaultTitle: SongsTab.title,
-              builder: (context) => SongsTab(key: songsTabKey),
+              builder: (context) => SongsTab(),
             ),
           1 => CupertinoTabView(
               defaultTitle: NewsTab.title,
@@ -137,6 +181,10 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
               defaultTitle: ProfileTab.title,
               builder: (context) => const ProfileTab(),
             ),
+          3 => CupertinoTabView(
+            defaultTitle: ProfileTab.title,
+            builder: (context) => const ProfileTab(),
+          ),
           _ => const SizedBox.shrink(),
         };
       },
@@ -184,6 +232,15 @@ class _AndroidDrawer extends StatelessWidget {
               Navigator.pop(context);
               Navigator.push<void>(context,
                   MaterialPageRoute(builder: (context) => const NewsTab()));
+            },
+          ),
+          ListTile(
+            leading: ProfileTab.androidIcon,
+            title: const Text(ProfileTab.title),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push<void>(context,
+                  MaterialPageRoute(builder: (context) => const ProfileTab()));
             },
           ),
           ListTile(
