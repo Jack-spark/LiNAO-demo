@@ -10,6 +10,8 @@ import 'zhuye_detail_tab.dart';
 import 'utils.dart';
 import 'widgets.dart';
 import 'zujian/hengchoutidaixiabiao.dart';
+import 'zujian/hengchouti.dart';
+import 'zujian/tuoyuananniu.dart';
 
 class ChallengeDetailPage extends StatelessWidget {
   final String title;
@@ -185,9 +187,32 @@ class _zhuyeTabState extends State<zhuyeTab> {
                   ],
                 ),
               ),
+              OvalButton(
+                onPressed: () {
+                  // 第一个按钮被点击时执行的操作
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '头环未连接，进入连接指引  ',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Image.asset(
+                      'assets/touhuan.png',
+                      width: 60, // 调整图标的宽度
+                      height: 60, // 调整图标的高度
+                    ),
+                  ],
+                ),
+                width: 350,
+                height: 50,
+                color: Colors.cyan,
+              ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(width: 8),
                   Container(
                     width: 4, // 竖线的宽度
                     height: 20, // 竖线的高度
@@ -200,7 +225,78 @@ class _zhuyeTabState extends State<zhuyeTab> {
                   ),
                 ],
               ),
-              SizedBox(height: 16),  // 设置按钮之间的垂直间隔
+              SizedBox(height: 1),
+              Container(
+                // width: 300,
+                // height: 200,
+                child: CustomButtonDrawer(
+                  buttonLabels: [
+                    '',
+                    '',
+                    '',
+                  ],
+                  buttonImagePaths: [
+                    'assets/b1.png',
+                    'assets/b2.png',
+                    'assets/b2.png',
+                  ],
+                  buttonDetailPages: [
+
+                  ],
+                ),
+              ),
+              SizedBox(height: 1),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(width: 8),
+                  Container(
+                    width: 4, // 竖线的宽度
+                    height: 20, // 竖线的高度
+                    color: Colors.black, // 竖线的颜色
+                    margin: EdgeInsets.only(top: 8, bottom: 8, right: 8), // 控制竖线与文字的间距
+                  ),
+                  Text(
+                    '多人冥想',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              SizedBox(height: 1),
+              Row(
+                children: [
+                  SizedBox(width: 40),
+
+                  OvalButton(
+                    onPressed: () {
+                      // 第一个按钮被点击时执行的操作
+                    },
+                    child: Text(
+                      '创建房间',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    width: 150,
+                    height: 50,
+                    color: Colors.cyan,
+                  ),
+
+                  SizedBox(width: 30), // 适当的间距
+
+                  OvalButton(
+                    onPressed: () {
+                      // 第二个按钮被点击时执行的操作
+                    },
+                    child: Text(
+                      '加入房间',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    width: 150,
+                    height: 50,
+                    color: Colors.cyan,
+                  ),
+
+                ],
+              ),
             ],
           ),
         ),
