@@ -11,8 +11,8 @@ import 'widgets.dart';
 ///
 /// On Android, this page sits at the top of your app. On iOS, this page is on
 /// top of the songs tab's content but is below the tab bar itself.
-class SongDetailTab extends StatelessWidget {
-  const SongDetailTab({
+class zhuyeDetailTab extends StatelessWidget {
+  const zhuyeDetailTab({
     required this.id,
     required this.song,
     required this.color,

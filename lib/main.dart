@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'news_tab.dart';
 import 'profile_tab.dart';
 import 'settings_tab.dart';
-import 'songs_tab.dart';
+import 'zhuye_tab.dart';
 import 'widgets.dart';
 
 void main() {
@@ -96,18 +96,44 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
           BottomNavigationBarItem(
             label: '主页',
             icon: Image.asset('assets/zhuye.png'),
+            activeIcon: Image.asset(
+              'assets/zhuye.png',
+              color: Colors.cyan, // 选中颜色
+            ),
+            // 未选中颜色
+            backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
-            label: '冥想'，
-            icon: NewsTab.iosIcon,
+            label: '冥想',
+            icon: Image.asset('assets/mingxiang.png'),
+            activeIcon: Image.asset(
+              'assets/mingxiang.png',
+              color: Colors.cyan, // 选中颜色
+            ),
+            // 未选中颜色
+            backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
-            label: ProfileTab.title,
-            icon: ProfileTab.iosIcon,
+            label: '课程',
+            icon: Image.asset('assets/kecheng.png'),
+            activeIcon: Image.asset(
+              'assets/kecheng.png',
+              color: Colors.cyan, // 选中颜色
+            ),
+            // 未选中颜色
+            backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
-            label: ProfileTab.title,
-            icon: ProfileTab.iosIcon,
+            label: '我的',
+            icon: Image.asset('assets/wode.png'),
+            // 设置选中和未选中状态下的颜色
+            // 例如，选中为蓝色，未选中为黑色
+            activeIcon: Image.asset(
+              'assets/wode.png',
+              color: Colors.cyan, // 选中颜色
+            ),
+            // 未选中颜色
+            backgroundColor: Colors.black,
           ),
         ],
       ),
@@ -116,7 +142,7 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
         return switch (index) {
           0 => CupertinoTabView(
             defaultTitle: '主页',
-            builder: (context) => SongsTab(key: SongsTabKey),
+            builder: (context) => zhuyeTab(key: SongsTabKey),
           ),
           1 => CupertinoTabView(
             defaultTitle: '冥想',
@@ -149,8 +175,8 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
       tabBar: CupertinoTabBar(
         items: const [
           BottomNavigationBarItem(
-            label: SongsTab.title,
-            icon: SongsTab.iosIcon,
+            label: zhuyeTab.title,
+            icon: zhuyeTab.iosIcon,
           ),
           BottomNavigationBarItem(
             label: NewsTab.title,
@@ -170,8 +196,8 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
         assert(index <= 2 && index >= 0, 'Unexpected tab index: $index');
         return switch (index) {
           0 => CupertinoTabView(
-              defaultTitle: SongsTab.title,
-              builder: (context) => SongsTab(),
+              defaultTitle: zhuyeTab.title,
+              builder: (context) => zhuyeTab(),
             ),
           1 => CupertinoTabView(
               defaultTitle: NewsTab.title,
@@ -219,8 +245,8 @@ class _AndroidDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: SongsTab.androidIcon,
-            title: const Text(SongsTab.title),
+            leading: zhuyeTab.androidIcon,
+            title: const Text(zhuyeTab.title),
             onTap: () {
               Navigator.pop(context);
             },

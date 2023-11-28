@@ -6,24 +6,55 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'song_detail_tab.dart';
+import 'zhuye_detail_tab.dart';
 import 'utils.dart';
 import 'widgets.dart';
+import 'zujian/hengchoutidaixiabiao.dart';
 
-class SongsTab extends StatefulWidget {
+class ChallengeDetailPage extends StatelessWidget {
+  final String title;
+
+  ChallengeDetailPage({required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    // 页面的构建逻辑
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: Container(
+        // 页面内容
+      ),
+    );
+  }
+}
+
+class zhuyeTab extends StatefulWidget {
   static const title = 'Songs';
   static const androidIcon = Icon(Icons.music_note);
   static const iosIcon = Icon(CupertinoIcons.music_note);
 
-  const SongsTab({super.key, this.androidDrawer});
+  const zhuyeTab({super.key, this.androidDrawer});
 
   final Widget? androidDrawer;
 
   @override
-  State<SongsTab> createState() => _SongsTabState();
+  State<zhuyeTab> createState() => _zhuyeTabState();
 }
 
-class _SongsTabState extends State<SongsTab> {
+class _zhuyeTabState extends State<zhuyeTab> {
+  final List<String> buttonLabels = ['', ''];
+  List<String> buttonImagePaths = [
+    'assets/a1.png',
+    'assets/a2.png',
+    // 添加更多按钮的图标数据
+  ];
+  List<Widget> ButtonDetailPage = [
+
+  ];
+
+
   static const _itemsLength = 50;
 
   final _androidRefreshKey = GlobalKey<RefreshIndicatorState>();
@@ -70,7 +101,7 @@ class _SongsTabState extends State<SongsTab> {
           heroAnimation: const AlwaysStoppedAnimation(0),
           onPressed: () => Navigator.of(context).push<void>(
             MaterialPageRoute(
-              builder: (context) => SongDetailTab(
+              builder: (context) => zhuyeDetailTab(
                 id: index,
                 song: songNames[index],
                 color: color,
@@ -110,7 +141,13 @@ class _SongsTabState extends State<SongsTab> {
   Widget _buildAndroid(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(SongsTab.title),
+        title: Row(
+          children: [
+            Image.asset('assets/linao.png', width: 100, height: 100), // 可以设置图像的宽高
+            const SizedBox(width: 8), // 适当调整图像和文本之间的间距
+            const Text('正念冥想'),
+          ],
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
@@ -124,13 +161,48 @@ class _SongsTabState extends State<SongsTab> {
         ],
       ),
       drawer: widget.androidDrawer,
-      body: RefreshIndicator(
-        key: _androidRefreshKey,
-        onRefresh: _refreshData,
-        child: ListView.builder(
-          padding: const EdgeInsets.symmetric(vertical: 12),
-          itemCount: _itemsLength,
-          itemBuilder: _listBuilder,
+      body: SafeArea(
+        bottom: true,
+        child:SingleChildScrollView(
+          child:Column(
+            children: [
+              Container(
+                // width: 300,
+                // height: 200,
+                child: CustomButtonDrawer1(
+                  buttonLabels: [
+                    '',
+                    '',
+                    '',
+                  ],
+                  buttonImagePaths: [
+                    'assets/a1.png',
+                    'assets/a2.png',
+                    'assets/a3.png',
+                  ],
+                  buttonDetailPages: [
+
+                  ],
+                ),
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 4, // 竖线的宽度
+                    height: 20, // 竖线的高度
+                    color: Colors.black, // 竖线的颜色
+                    margin: EdgeInsets.only(top: 8, bottom: 8, right: 8), // 控制竖线与文字的间距
+                  ),
+                  Text(
+                    '为你推荐',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              SizedBox(height: 16),  // 设置按钮之间的垂直间隔
+            ],
+          ),
         ),
       ),
     );
