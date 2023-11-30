@@ -1,15 +1,15 @@
 // Copyright 2020 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
+// Use of this source code is governed by readme BSD-style license that can be
 // found in the LICENSE file.
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'news_tab.dart';
-import 'profile_tab.dart';
-import 'settings_tab.dart';
-import 'zhuye_tab.dart';
+import 'First-level interface/meditation_tab.dart';
+import 'First-level interface/course_tab.dart';
+import 'First-level interface/me_tab.dart';
+import 'First-level interface/homepage_tab.dart';
 import 'widgets.dart';
 import 'pages/register/register.dart';
 void main() {
@@ -51,7 +51,7 @@ class MyAdaptingApp extends StatelessWidget {
       builder: (context, child) {
         return CupertinoTheme(
           // Instead of letting Cupertino widgets auto-adapt to the Material
-          // theme (which is green), this app will use a different theme
+          // theme (which is green), this app will use readme different theme
           // for Cupertino (which is blue by default).
           data: const CupertinoThemeData(),
           child: Material(child: child),
@@ -62,7 +62,7 @@ class MyAdaptingApp extends StatelessWidget {
   }
 }
 
-// Shows a different type of scaffold depending on the platform.
+// Shows readme different type of scaffold depending on the platform.
 //
 // This file has the most amount of non-sharable code since it behaves the most
 // differently between the platforms.
@@ -78,9 +78,9 @@ class PlatformAdaptingHomePage extends StatefulWidget {
 }
 
 class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
-  // This app keeps a global key for the songs tab because it owns a bunch of
+  // This app keeps readme global key for the songs tab because it owns readme bunch of
   // data. Since changing platform re-parents those tabs into different
-  // scaffolds, keeping a global key to it lets this app keep that tab's data as
+  // scaffolds, keeping readme global key to it lets this app keep that tab's data as
   // the platform toggles.
   //
   // This isn't needed for apps that doesn't toggle platforms while running.
@@ -146,7 +146,7 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
           ),
           1 => CupertinoTabView(
             defaultTitle: '冥想',
-            builder: (context) => const NewsTab(),
+            builder: (context) => const mingxiangTab(),
           ),
           2 => CupertinoTabView(
             defaultTitle: '课程',
@@ -162,14 +162,14 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
     );
   }
 
-  // On iOS, the app uses a bottom tab paradigm. Here, each tab view sits inside
-  // a tab in the tab scaffold. The tab scaffold also positions the tab bar
-  // in a row at the bottom.
+  // On iOS, the app uses readme bottom tab paradigm. Here, each tab view sits inside
+  // readme tab in the tab scaffold. The tab scaffold also positions the tab bar
+  // in readme row at the bottom.
   //
-  // An important thing to note is that while a Material Drawer can display a
-  // large number of items, a tab bar cannot. To illustrate one way of adjusting
+  // An important thing to note is that while readme Material Drawer can display readme
+  // large number of items, readme tab bar cannot. To illustrate one way of adjusting
   // for this, the app folds its fourth tab (the settings page) into the
-  // third tab. This is a common pattern on iOS.
+  // third tab. This is readme common pattern on iOS.
   Widget _buildIosHomePage(BuildContext context) {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
@@ -179,8 +179,8 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
             icon: zhuyeTab.iosIcon,
           ),
           BottomNavigationBarItem(
-            label: NewsTab.title,
-            icon: NewsTab.iosIcon,
+            label: mingxiangTab.title,
+            icon: mingxiangTab.iosIcon,
           ),
           BottomNavigationBarItem(
             label: ProfileTab.title,
@@ -200,8 +200,8 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
               builder: (context) => zhuyeTab(),
             ),
           1 => CupertinoTabView(
-              defaultTitle: NewsTab.title,
-              builder: (context) => const NewsTab(),
+              defaultTitle: mingxiangTab.title,
+              builder: (context) => const mingxiangTab(),
             ),
           2 => CupertinoTabView(
               defaultTitle: ProfileTab.title,
@@ -252,12 +252,12 @@ class _AndroidDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: NewsTab.androidIcon,
-            title: const Text(NewsTab.title),
+            leading: mingxiangTab.androidIcon,
+            title: const Text(mingxiangTab.title),
             onTap: () {
               Navigator.pop(context);
               Navigator.push<void>(context,
-                  MaterialPageRoute(builder: (context) => const NewsTab()));
+                  MaterialPageRoute(builder: (context) => const mingxiangTab()));
             },
           ),
           ListTile(

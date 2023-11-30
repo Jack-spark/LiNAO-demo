@@ -22,6 +22,7 @@ class _CustomButtonDrawerState extends State<CustomButtonDrawer1> {
 
   @override
   Widget build(BuildContext context) {
+    double devicePixelRatio = MediaQuery.of(context).devicePixelRatio;
     return Column(
       children: [
         SizedBox(height: 20), // 与手机边框的间隔

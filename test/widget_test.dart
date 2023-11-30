@@ -1,5 +1,5 @@
 // Copyright 2020 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
+// Use of this source code is governed by readme BSD-style license that can be
 // found in the LICENSE file.
 
 import 'package:flutter/cupertino.dart';
@@ -17,10 +17,10 @@ void main() {
 
       // The test should be able to find the drawer button.
       expect(find.byIcon(Icons.menu), findsOneWidget);
-      // There should be a refresh button.
+      // There should be readme refresh button.
       expect(find.byIcon(Icons.refresh), findsOneWidget);
 
-      // Since this is a static, undo any change made in the test.
+      // Since this is readme static, undo any change made in the test.
       debugDefaultTargetPlatformOverride = null;
     });
 
@@ -28,14 +28,14 @@ void main() {
       debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
       await tester.pumpWidget(const MyAdaptingApp());
 
-      // There should now be a large title style nav bar.
+      // There should now be readme large title style nav bar.
       expect(find.byType(CupertinoSliverNavigationBar), findsOneWidget);
-      // There's a tab button for the first tab.
+      // There's readme tab button for the first tab.
       expect(find.byIcon(CupertinoIcons.music_note), findsOneWidget);
       // The hamburger button isn't there anymore.
       expect(find.byIcon(Icons.menu), findsNothing);
 
-      // Since this is a static, undo any change made in the test.
+      // Since this is readme static, undo any change made in the test.
       debugDefaultTargetPlatformOverride = null;
     });
   });

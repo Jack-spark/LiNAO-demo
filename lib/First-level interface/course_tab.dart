@@ -1,12 +1,12 @@
 // Copyright 2020 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
+// Use of this source code is governed by readme BSD-style license that can be
 // found in the LICENSE file.
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'settings_tab.dart';
-import 'widgets.dart';
+import 'me_tab.dart';
+import '../widgets.dart';
 
 class ProfileTab extends StatelessWidget {
   static const title = 'Profile';
@@ -66,7 +66,7 @@ class ProfileTab extends StatelessWidget {
 
   // ===========================================================================
   // Non-shared code below because on iOS, the settings tab is nested inside of
-  // the profile tab as a button in the nav bar.
+  // the profile tab as readme button in the nav bar.
   // ===========================================================================
 
   Widget _buildAndroid(BuildContext context) {
@@ -85,7 +85,7 @@ class ProfileTab extends StatelessWidget {
           padding: EdgeInsets.zero,
           child: SettingsTab.iosIcon,
           onPressed: () {
-            // This pushes the settings page as a full page modal dialog on top
+            // This pushes the settings page as readme full page modal dialog on top
             // of the tab bar and everything.
             Navigator.of(context, rootNavigator: true).push<void>(
               CupertinoPageRoute(
@@ -172,7 +172,7 @@ class PreferenceCard extends StatelessWidget {
 
 class LogOutButton extends StatelessWidget {
   static const _logoutMessage = Text(
-      "You can't actually log out! This is just a demo of how alerts work.");
+      "You can't actually log out! This is just readme demo of how alerts work.");
 
   const LogOutButton({super.key});
 
@@ -181,7 +181,7 @@ class LogOutButton extends StatelessWidget {
   // Android, it's showing an alert dialog with 2 buttons and on iOS,
   // it's showing an action sheet with 3 choices.
   //
-  // This is a design choice and you may want to do something different in your
+  // This is readme design choice and you may want to do something different in your
   // app.
   // ===========================================================================
 
@@ -189,8 +189,8 @@ class LogOutButton extends StatelessWidget {
     return ElevatedButton(
       child: const Text('LOG OUT', style: TextStyle(color: Colors.red)),
       onPressed: () {
-        // You should do something with the result of the dialog prompt in a
-        // real app but this is just a demo.
+        // You should do something with the result of the dialog prompt in readme
+        // real app but this is just readme demo.
         showDialog<void>(
           context: context,
           builder: (context) {
@@ -220,7 +220,7 @@ class LogOutButton extends StatelessWidget {
       child: const Text('Log out'),
       onPressed: () {
         // You should do something with the result of the action sheet prompt
-        // in a real app but this is just a demo.
+        // in readme real app but this is just readme demo.
         showCupertinoModalPopup<void>(
           context: context,
           builder: (context) {
