@@ -15,6 +15,7 @@ class _PasswordInputState extends State<PasswordInput> {
 
   @override
   Widget build(BuildContext context) {
+    print('hello');
     return buildTextField();
   }
 
