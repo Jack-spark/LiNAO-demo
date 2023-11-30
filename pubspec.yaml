@@ -24,12 +24,4 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/splash_image.png
-    - assets/zhuye.png
-    - assets/mingxiang.png
-    - assets/kecheng.png
-    - assets/wode.png
-    - assets/linao.png
-    - assets/a1.png
-    - assets/a2.png
-    - assets/a3.png
+    - assets/

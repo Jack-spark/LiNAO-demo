@@ -11,7 +11,7 @@ import 'profile_tab.dart';
 import 'settings_tab.dart';
 import 'zhuye_tab.dart';
 import 'widgets.dart';
-
+import 'pages/register/register.dart';
 void main() {
   runApp(MyApp());
 }
@@ -142,7 +142,7 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
         return switch (index) {
           0 => CupertinoTabView(
             defaultTitle: '主页',
-            builder: (context) => zhuyeTab(key: SongsTabKey),
+            builder: (context) => register(key: SongsTabKey),
           ),
           1 => CupertinoTabView(
             defaultTitle: '冥想',
