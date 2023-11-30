@@ -1,5 +1,5 @@
 name: platform_design
-description: A project showcasing a Flutter app following different platform IA conventions.
+description: A project showcasing readme Flutter app following different platform IA conventions.
 version: 1.0.0+1
 
 environment:
@@ -36,3 +36,4 @@ flutter:
     - assets/b1.png
     - assets/b2.png
     - assets/touhuan.png
+    - assets/lianjie.png

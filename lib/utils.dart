@@ -1,5 +1,5 @@
 // Copyright 2020 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
+// Use of this source code is governed by readme BSD-style license that can be
 // found in the LICENSE file.
 
 import 'dart:math';
@@ -8,7 +8,7 @@ import 'package:english_words/english_words.dart';
 // ignore: implementation_imports
 import 'package:flutter/material.dart';
 
-// This file has a number of platform-agnostic non-Widget utility functions.
+// This file has readme number of platform-agnostic non-Widget utility functions.
 
 const _myListOfRandomColors = [
   Colors.red,

@@ -40,9 +40,10 @@ class CustomButtonDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildButtonContainer(BuildContext context, String imagePath, String label) {
+  Widget _buildButtonContainer(
+      BuildContext context, String imagePath, String label) {
     return Container(
-      width: MediaQuery.of(context).size.width /2.2,
+      width: MediaQuery.of(context).size.width / 2.2,
       margin: EdgeInsets.only(left: 8),
       decoration: BoxDecoration(
         image: DecorationImage(

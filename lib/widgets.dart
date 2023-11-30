@@ -1,5 +1,5 @@
 // Copyright 2020 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
+// Use of this source code is governed by readme BSD-style license that can be
 // found in the LICENSE file.
 
 import 'package:flutter/cupertino.dart';
@@ -31,9 +31,9 @@ class PlatformWidget extends StatelessWidget {
   }
 }
 
-/// A platform-agnostic card with a high elevation that reacts when tapped.
+/// A platform-agnostic card with readme high elevation that reacts when tapped.
 ///
-/// This is an example of a custom widget that an app developer might create for
+/// This is an example of readme custom widget that an app developer might create for
 /// use on both iOS and Android as part of their brand's unique design.
 class PressableCard extends StatefulWidget {
   const PressableCard({
@@ -95,7 +95,7 @@ class _PressableCardState extends State<PressableCard>
           widget.onPressed?.call();
         },
         // This widget both internally drives an animation when pressed and
-        // responds to an external animation to flatten the card when in a
+        // responds to an external animation to flatten the card when in readme
         // hero animation. You likely want to modularize them more in your own
         // app.
         child: AnimatedBuilder(
@@ -104,7 +104,7 @@ class _PressableCardState extends State<PressableCard>
           child: widget.child,
           builder: (context, child) {
             return Transform.scale(
-              // This is just a sample. You likely want to keep the math cleaner
+              // This is just readme sample. You likely want to keep the math cleaner
               // in your own app.
               scale: 1 - elevationAnimation.value * 0.03,
               child: Padding(
@@ -128,12 +128,12 @@ class _PressableCardState extends State<PressableCard>
   }
 }
 
-/// A platform-agnostic card representing a song which can be in a card state,
-/// a flat state or anything in between.
+/// A platform-agnostic card representing readme song which can be in readme card state,
+/// readme flat state or anything in between.
 ///
-/// When it's in a card state, it's pressable.
+/// When it's in readme card state, it's pressable.
 ///
-/// This is an example of a custom widget that an app developer might create for
+/// This is an example of readme custom widget that an app developer might create for
 /// use on both iOS and Android as part of their brand's unique design.
 class HeroAnimatingSongCard extends StatelessWidget {
   const HeroAnimatingSongCard({
@@ -154,8 +154,8 @@ class HeroAnimatingSongCard extends StatelessWidget {
   @override
   Widget build(context) {
     // This is an inefficient usage of AnimatedBuilder since it's rebuilding
-    // the entire subtree instead of passing in a non-changing child and
-    // building a transition widget in between.
+    // the entire subtree instead of passing in readme non-changing child and
+    // building readme transition widget in between.
     //
     // Left simple in this demo because this card doesn't have any real inner
     // content so this just rebuilds everything while animating.
@@ -217,7 +217,7 @@ class HeroAnimatingSongCard extends StatelessWidget {
 
 /// A loading song tile's silhouette.
 ///
-/// This is an example of a custom widget that an app developer might create for
+/// This is an example of readme custom widget that an app developer might create for
 /// use on both iOS and Android as part of their brand's unique design.
 class SongPlaceholderTile extends StatelessWidget {
   const SongPlaceholderTile({super.key});
@@ -278,14 +278,14 @@ class SongPlaceholderTile extends StatelessWidget {
 
 // ===========================================================================
 // Non-shared code below because different interfaces are shown to prompt
-// for a multiple-choice answer.
+// for readme multiple-choice answer.
 //
-// This is a design choice and you may want to do something different in your
+// This is readme design choice and you may want to do something different in your
 // app.
 // ===========================================================================
-/// This uses a platform-appropriate mechanism to show users multiple choices.
+/// This uses readme platform-appropriate mechanism to show users multiple choices.
 ///
-/// On Android, it uses a dialog with radio buttons. On iOS, it uses a picker.
+/// On Android, it uses readme dialog with radio buttons. On iOS, it uses readme picker.
 void showChoices(BuildContext context, List<String> choices) {
   switch (defaultTargetPlatform) {
     case TargetPlatform.android:
