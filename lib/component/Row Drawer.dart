@@ -4,24 +4,18 @@ class CustomButtonDrawer extends StatelessWidget {
   final List<String> buttonLabels;
   final List<String> buttonImagePaths;
   final List<Widget> buttonDetailPages;
-  final double containerHeight;
-  final double containerWidth;
-  final EdgeInsetsGeometry containerMargin;
 
   const CustomButtonDrawer({
     Key? key,
     required this.buttonLabels,
     required this.buttonImagePaths,
     required this.buttonDetailPages,
-    this.containerHeight = 632/3.5,
-    this.containerWidth = 518/3.5,
-    this.containerMargin = const EdgeInsets.symmetric(vertical:  54/3.5),
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: containerHeight,
+      height: 632/3.5,
       margin: EdgeInsets.symmetric(vertical: 16),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -49,8 +43,8 @@ class CustomButtonDrawer extends StatelessWidget {
   Widget _buildButtonContainer(
       BuildContext context, String imagePath, String label) {
     return Container(
-      width: containerWidth,
-      margin: containerMargin,
+      width: 518/3.5,
+      margin: EdgeInsets.only(left: 54/3.5),
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(imagePath),
