@@ -40,65 +40,51 @@ class _CustomVertificationCodeState extends State<CustomVertificationCode> {
   }
 
   //随机生成绘图数据
-  Map getRandomData() {
-    // 数字list
+  Map getFixedData() {
     List list = code.split("");
-    // X坐标
     double x = 0.0;
-    // 最大字体大小
     double maxFontSize = 35.0;
-    //将painter保存起来，先计算出位置
     List mList = [];
+
     for (String item in list) {
-      Color color = Color.fromARGB(255, Random().nextInt(255),
-          Random().nextInt(255), Random().nextInt(255));
-      int fontWeight = Random().nextInt(9);
+      // 固定的颜色和字体样式
+      Color color = Color.fromARGB(255, 0, 0, 0); // 这里可以设置固定颜色
+      int fontWeight = FontWeight.normal.index;  // 固定字体样式
       TextSpan span = TextSpan(
           text: item,
           style: TextStyle(
               color: color,
               fontWeight: FontWeight.values[fontWeight],
-              fontSize: maxFontSize - Random().nextInt(10)));
-      TextPainter painter =
-          TextPainter(text: span, textDirection: TextDirection.ltr);
+              fontSize: maxFontSize));
+      TextPainter painter = TextPainter(text: span, textDirection: TextDirection.ltr);
       painter.layout();
-      double y =
-          Random().nextInt(widget.height.toInt()).toDouble() - painter.height;
-      if (y < 0) {
-        y = 0;
-      }
+
+      // 固定 Y 坐标
+      double y = 0.0;
+
       Map strMap = {"painter": painter, "x": x, "y": y};
       mList.add(strMap);
-      x += painter.width + 3;
-    }
-    double offsetX = (widget.width - x) / 2;
-    List dotData = [];
-    //绘制干扰点
-    for (var i = 0; i < widget.dotCount; i++) {
-      int r = Random().nextInt(255);
-      int g = Random().nextInt(255);
-      int b = Random().nextInt(255);
-      double x = Random().nextInt(widget.width.toInt() - 5).toDouble();
-      double y = Random().nextInt(widget.height.toInt() - 5).toDouble();
-      double dotWidth = Random().nextInt(6).toDouble();
-      Color color = Color.fromARGB(255, r, g, b);
-      Map dot = {"x": x, "y": y, "dotWidth": dotWidth, "color": color};
-      dotData.add(dot);
+      x += painter.width + 3; // 固定间距
     }
 
-    Map checkCodeDrawData = {
+    double offsetX = (widget.width - x) / 2;
+
+    Map fixedCodeDrawData = {
       "painterData": mList,
       "offsetX": offsetX,
-      "dotData": dotData,
+      // 没有干扰点，可以根据需要添加
+      "dotData": [],
     };
-    return checkCodeDrawData;
+
+    return fixedCodeDrawData;
   }
+
 
   @override
   Widget build(BuildContext context) {
     print("buid?");
     double maxWidth = 0.0;
-    Map drawData = getRandomData();
+    Map drawData = getFixedData();
     //计算最大宽度做自适应
     maxWidth = getTextSize("8" * code.length,
             TextStyle(fontWeight: FontWeight.values[8], fontSize: 25))
@@ -114,6 +100,7 @@ class _CustomVertificationCodeState extends State<CustomVertificationCode> {
         onTap: () {
           setState(() {
             _getCode();
+            drawData = getFixedData();
           });
         });
   }
