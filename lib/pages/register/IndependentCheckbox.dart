@@ -19,7 +19,8 @@ class _IndependentCheckboxWidgetState extends State<IndependentCheckboxWidget> {
 
         setState(() {
           isCheckboxChecked = value!;
-        });
+        }
+        );
       },
     );
   }

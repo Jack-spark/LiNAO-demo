@@ -10,7 +10,7 @@ import 'package:flutter_lorem/flutter_lorem.dart';
 import '../utils.dart';
 import '../widgets.dart';
 import '../component/Two-column Drawer.dart';
-import '../lanyajiemian.dart';
+import '../Secondary Interface/bluetooth interface.dart';
 
 class mingxiangTab extends StatefulWidget {
   static const title = 'News';

@@ -15,7 +15,7 @@ class CustomButtonDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250,
+      height: 632/3.5,
       margin: EdgeInsets.symmetric(vertical: 16),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -43,8 +43,8 @@ class CustomButtonDrawer extends StatelessWidget {
   Widget _buildButtonContainer(
       BuildContext context, String imagePath, String label) {
     return Container(
-      width: MediaQuery.of(context).size.width / 2.2,
-      margin: EdgeInsets.only(left: 8),
+      width: 518/3.5,
+      margin: EdgeInsets.only(left: 54/3.5),
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(imagePath),

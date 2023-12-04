@@ -142,7 +142,8 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
         return switch (index) {
           0 => CupertinoTabView(
             defaultTitle: '主页',
-            builder: (context) => register(key: SongsTabKey),
+            //builder: (context) => register(key: SongsTabKey),
+            builder: (context) => const zhuyeTab(),
           ),
           1 => CupertinoTabView(
             defaultTitle: '冥想',

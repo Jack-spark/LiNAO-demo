@@ -115,9 +115,16 @@ class _zhuyeTabState extends State<zhuyeTab> {
       appBar: AppBar(
         title: Row(
           children: [
-            Image.asset('assets/linao.png', width: 310/ devicePixelRatio, height: 77/devicePixelRatio), // 可以设置图像的宽高
+            Image.asset('assets/linao.png', width: 301/ 3.5, height: 77/3.5), // 可以设置图像的宽高
             const SizedBox(width: 8), // 适当调整图像和文本之间的间距
-            const Text('正念冥想'),
+            const Text('正念冥想',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 46 / 3.5,
+                letterSpacing: 10 / 3.5,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ],
         ),
         actions: [
@@ -179,23 +186,24 @@ class _zhuyeTabState extends State<zhuyeTab> {
                 height: 50,
                 color: Colors.cyan,
               ),
+              SizedBox(height: 96/3.5),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(width: 8),
                   Container(
-                    width: 4, // 竖线的宽度
-                    height: 20, // 竖线的高度
+                    width: 15/3.5, // 竖线的宽度
+                    height: 54/3.5, // 竖线的高度
                     color: Colors.black, // 竖线的颜色
                     margin: EdgeInsets.only(top: 8, bottom: 8, right: 8), // 控制竖线与文字的间距
                   ),
                   Text(
                     '为你推荐',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 65/3.5, letterSpacing:6/3.5, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
-              SizedBox(height: 1),
+              SizedBox(height: 2),
               Container(
                 // width: 300,
                 // height: 200,
@@ -215,27 +223,27 @@ class _zhuyeTabState extends State<zhuyeTab> {
                   ],
                 ),
               ),
-              SizedBox(height: 1),
+              SizedBox(height: 2),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(width: 8),
                   Container(
-                    width: 4, // 竖线的宽度
-                    height: 20, // 竖线的高度
+                    width: 15/3.5, // 竖线的宽度
+                    height: 54/3.5, // 竖线的高度
                     color: Colors.black, // 竖线的颜色
                     margin: EdgeInsets.only(top: 8, bottom: 8, right: 8), // 控制竖线与文字的间距
                   ),
                   Text(
                     '多人冥想',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 65/3.5, letterSpacing:6/3.5, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
-              SizedBox(height: 1),
+              SizedBox(height: 15),
               Row(
                 children: [
-                  SizedBox(width: 40),
+                  SizedBox(width: 77/3.5),
 
                   OvalButton(
                     onPressed: () {
@@ -246,7 +254,7 @@ class _zhuyeTabState extends State<zhuyeTab> {
                               SizedBox(height:20),
                               Text(
                                 '您的头环未连接，请连接后创建',
-                                style: TextStyle(fontSize: 25),
+                                style: TextStyle(fontSize: 61/3.5,letterSpacing: 2/3.5),
                               ),
                               SizedBox(height:20),
                               Padding(
@@ -270,8 +278,8 @@ class _zhuyeTabState extends State<zhuyeTab> {
                                           '取消',
                                           style: TextStyle(color: Colors.black),
                                         ),
-                                        width: 150,
-                                        height: 50,
+                                        width: 595/3.5,
+                                        height: 184/3.5,
                                         color: Colors.white,
                                       ),
                                     ),
@@ -283,8 +291,8 @@ class _zhuyeTabState extends State<zhuyeTab> {
                                         '去连接',
                                         style: TextStyle(color: Colors.white),
                                       ),
-                                      width: 150,
-                                      height: 50,
+                                      width: 595/3.5,
+                                      height: 184/3.5,
                                       color: Colors.cyan,
                                     ),
                                   ],
@@ -298,12 +306,12 @@ class _zhuyeTabState extends State<zhuyeTab> {
                       '创建房间',
                       style: TextStyle(color: Colors.white),
                     ),
-                    width: 150,
-                    height: 50,
+                    width: 614/3.5,
+                    height: 169/3.5,
                     color: Colors.cyan,
                   ),
 
-                  SizedBox(width: 30), // 适当的间距
+                  SizedBox(width: 56/3.5), // 适当的间距
 
                   OvalButton(
                     onPressed: () {
@@ -314,7 +322,7 @@ class _zhuyeTabState extends State<zhuyeTab> {
                             SizedBox(height:20),
                             Text(
                               '您的头环未连接，请连接后加入',
-                              style: TextStyle(fontSize: 25),
+                              style: TextStyle(fontSize: 61/3.5,letterSpacing: 2/3.5),
                             ),
                             SizedBox(height:20),
                             Padding(
@@ -338,8 +346,8 @@ class _zhuyeTabState extends State<zhuyeTab> {
                                         '取消',
                                         style: TextStyle(color: Colors.black),
                                       ),
-                                      width: 150,
-                                      height: 50,
+                                      width: 595/3.5,
+                                      height: 184/3.5,
                                       color: Colors.white,
                                     ),
                                   ),
@@ -351,8 +359,8 @@ class _zhuyeTabState extends State<zhuyeTab> {
                                       '去连接',
                                       style: TextStyle(color: Colors.white),
                                     ),
-                                    width: 150,
-                                    height: 50,
+                                    width: 614/3.5,
+                                    height: 184/3.5,
                                     color: Colors.cyan,
                                   ),
                                 ],
@@ -367,8 +375,8 @@ class _zhuyeTabState extends State<zhuyeTab> {
                       '加入房间',
                       style: TextStyle(color: Colors.white),
                     ),
-                    width: 150,
-                    height: 50,
+                    width: 180,
+                    height: 169/3.5,
                     color: Colors.cyan,
                   ),
 
