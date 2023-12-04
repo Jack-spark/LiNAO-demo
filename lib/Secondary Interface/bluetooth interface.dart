@@ -17,7 +17,7 @@ class lanyaPage extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             DualButtonSelector(), // 这里调用你的双选按钮组件
             SizedBox(height: 20), // 设置间距
@@ -25,6 +25,7 @@ class lanyaPage extends StatelessWidget {
               '这是一个Flutter界面，点击左上角的退出键返回上一个界面',
               textAlign: TextAlign.center,
             ),
+
           ],
         ),
       ),
