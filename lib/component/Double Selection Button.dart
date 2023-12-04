@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+// 蓝牙里面的双选按钮
 class DualButtonSelector extends StatefulWidget {
   @override
   _DualButtonSelectorState createState() => _DualButtonSelectorState();

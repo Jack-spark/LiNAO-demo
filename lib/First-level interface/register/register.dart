@@ -7,6 +7,7 @@ import 'identifying code.dart';
 import 'PasswordInput.dart';
 import 'IndependentCheckbox.dart';
 import '../../component/Oval button.dart';
+import 'package:platform_design/component/bottom sheet.dart';
 
 class register extends StatefulWidget {
   static const title = 'register';
@@ -173,6 +174,7 @@ class _registerState extends State<register> {
                 left: (MediaQuery.of(context).size.width - 1248 / 3.5) / 2,
                 child: OvalButton(
                   onPressed: () {
+
                     // 第一个按钮被点击时执行的操作
                   },
                   child: Row(

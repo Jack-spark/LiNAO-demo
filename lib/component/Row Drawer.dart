@@ -16,7 +16,7 @@ class CustomButtonDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 632/3.5,
-      margin: EdgeInsets.symmetric(vertical: 16),
+      // margin: EdgeInsets.symmetric(vertical: 16),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: buttonLabels.length,

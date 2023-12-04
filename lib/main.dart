@@ -11,7 +11,8 @@ import 'First-level interface/course_tab.dart';
 import 'First-level interface/me_tab.dart';
 import 'First-level interface/homepage_tab.dart';
 import 'widgets.dart';
-import 'pages/register/register.dart';
+import 'First-level interface/register/register.dart';
+import 'First-level interface/course/course.dart';
 void main() {
   runApp(MyApp());
 }
@@ -142,8 +143,7 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
         return switch (index) {
           0 => CupertinoTabView(
             defaultTitle: '主页',
-            //builder: (context) => register(key: SongsTabKey),
-            builder: (context) => const zhuyeTab(),
+            builder: (context) => zhuyeTab(key: SongsTabKey),
           ),
           1 => CupertinoTabView(
             defaultTitle: '冥想',
@@ -151,7 +151,7 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
           ),
           2 => CupertinoTabView(
             defaultTitle: '课程',
-            builder: (context) => const ProfileTab(),
+            builder: (context) => const CourseTab(),
           ),
           3 => CupertinoTabView(
             defaultTitle: '我的',
@@ -206,7 +206,7 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
             ),
           2 => CupertinoTabView(
               defaultTitle: ProfileTab.title,
-              builder: (context) => const ProfileTab(),
+              builder: (context) => const CourseTab(),
             ),
           3 => CupertinoTabView(
             defaultTitle: ProfileTab.title,

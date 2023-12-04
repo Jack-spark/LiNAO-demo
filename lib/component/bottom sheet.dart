@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
+// 底部弹出的浮窗
 void showCustomBottomSheet(BuildContext context, Widget content) {
+  // 在需要点击弹出底部浮窗的组件里，ontap事件里面调用showCustomBottomSheet方法
   showModalBottomSheet(
     context: context,
     builder: (BuildContext context) {
