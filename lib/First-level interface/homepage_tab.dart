@@ -221,6 +221,9 @@ class _zhuyeTabState extends State<zhuyeTab> {
                   buttonDetailPages: [
 
                   ],
+                  containerHeight: 632/3.5, // 设置容器高度
+                  containerWidth: 518/3.5, // 设置容器宽度
+                  containerMargin: EdgeInsets.only(left: 54/3.5), // 设置容器边距
                 ),
               ),
               SizedBox(height: 2),
@@ -379,7 +382,6 @@ class _zhuyeTabState extends State<zhuyeTab> {
                     height: 169/3.5,
                     color: Colors.cyan,
                   ),
-
                 ],
               ),
             ],
