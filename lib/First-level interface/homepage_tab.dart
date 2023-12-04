@@ -207,7 +207,8 @@ class _zhuyeTabState extends State<zhuyeTab> {
               Container(
                 // width: 300,
                 // height: 200,
-                child: CustomButtonDrawer(
+                child:
+                CustomButtonDrawer(
                   buttonLabels: [
                     '',
                     '',
@@ -221,6 +222,9 @@ class _zhuyeTabState extends State<zhuyeTab> {
                   buttonDetailPages: [
 
                   ],
+                  containerHeight: 632/3.5, // 设置容器高度
+                  containerWidth: 518/3.5, // 设置容器宽度
+                  containerMargin: EdgeInsets.only(left: 54/3.5),// 设置容器边距
                 ),
               ),
               SizedBox(height: 2),
