@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Oval button.dart';
 // 蓝牙里面的双选按钮
 class DualButtonSelector extends StatefulWidget {
   @override
@@ -90,9 +91,7 @@ class _DualButtonSelectorState extends State<DualButtonSelector> {
             ],
           ),
         ),
-        SizedBox(height: 20),
         leftPage,
-        SizedBox(height: 20),
         rightPage,
       ],
     );
@@ -107,18 +106,137 @@ class _DualButtonSelectorState extends State<DualButtonSelector> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/lianjiejieshao.png', // 图片路径
-              // width: 150, // 设置图片宽度
-              // height: 150, // 设置图片高度
-              fit: BoxFit.cover, // 图片填充方式
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10), // 圆角半径
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2), // 阴影颜色和透明度
+                    spreadRadius: 2, // 阴影扩散半径
+                    blurRadius: 5, // 阴影模糊半径
+                    offset: Offset(0, 2), // 阴影偏移量
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10), // 图片的圆角半径
+                child: Image.asset(
+                  'assets/lianjiejieshao.png', // 图片路径
+                  width: 1286 / 3.5,
+                  height: 649 / 3.5,
+                  fit: BoxFit.cover, // 图片填充方式
+                ),
+              ),
             ),
-            SizedBox(height: 16),
-            Text(
-              'Your text here', // 可选的文本内容
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+            SizedBox(height: 96/3.5),
+            Container(
+              width: 1286 / 3.5,
+              height: 1634 / 3.5,
+              decoration: BoxDecoration(
+                color: Colors.white, // 背景色
+                borderRadius: BorderRadius.circular(10), // 圆角半径
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2), // 阴影颜色和透明度
+                    spreadRadius: 2, // 阴影扩散半径
+                    blurRadius: 5, // 阴影模糊半径
+                    offset: Offset(0, 2), // 阴影偏移量
+                  ),
+                ],
+              ),
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: 144 / 3.5, // 上边距
+                    left: 0,
+                    right: 0,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10), // 图片的圆角半径
+                      child: Image.asset(
+                        'assets/wuquanxian.png', // 图片路径
+                        width: 699 / 3.5,
+                        height: 702 / 3.5, // 图片填充方式
+                        fit: BoxFit.contain, // 图片填充方式
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 943 / 3.5, // 上边距
+                    left: 0,
+                    right: 0,
+                    child: Text.rich(
+                      TextSpan(
+                        text: '请开启',
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: '蓝牙',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          TextSpan(text: '和'),
+                          TextSpan(
+                            text: '定位',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          TextSpan(text: '功能'),
+                        ],
+                      ),
+                      textAlign: TextAlign.center, // 文本水平居中
+                      style: TextStyle(
+                        fontSize: 50/3.5, // 字体大小
+                        letterSpacing: 2/3.5, // 字间距
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 1056 / 3.5, // 上边距
+                    left: 0,
+                    right: 0,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          '连接头环需要开启蓝牙功能和获取位置信息才能正常使用。',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 38/3.5,
+                            letterSpacing: 2/3.5,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        Text(
+                          '开启后，请点击下方”我已开启按钮刷新界面“',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 38/3.5,
+                            letterSpacing: 2/3.5,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Positioned(
+                    top: 1290/ 3.5, // 上边距
+                    left: 163/3.5,
+                    right: 163/3.5,
+                    child: OvalButton(
+                      onPressed: () {
+
+                      },
+                      child: Text(
+                        '去连接',
+                        style: TextStyle(
+                          fontSize: 61/3.5,
+                          letterSpacing: 4/3.5,
+                          color: Colors.white,
+                        ),
+                      ),
+                      width: 960/3.5,
+                      height: 180/3.5,
+                      color: Colors.cyan,
+                    ),
+                  ),
+                ],
               ),
             ),
             // 可以在这里添加其他的文本或小部件
@@ -137,18 +255,61 @@ class _DualButtonSelectorState extends State<DualButtonSelector> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/b2.png', // 图片路径
-              width: 150, // 设置图片宽度
-              height: 150, // 设置图片高度
-              fit: BoxFit.cover, // 图片填充方式
+            Container(
+              width: 1286 / 3.5,
+              height: 630 / 3.5,
+              decoration: BoxDecoration(
+                color: Colors.white, // 背景色
+                borderRadius: BorderRadius.circular(10), // 圆角半径
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2), // 阴影颜色和透明度
+                    spreadRadius: 2, // 阴影扩散半径
+                    blurRadius: 5, // 阴影模糊半径
+                    offset: Offset(0, 2), // 阴影偏移量
+                  ),
+                ],
+              ),
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: 121 / 3.5, // 上边距
+                    left: 0,
+                    right: 0,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10), // 图片的圆角半径
+                      child: Image.asset(
+                        'assets/weitu.png', // 图片路径
+                        width: 927 / 3.5,
+                        height: 509 / 3.5, // 图片填充方式
+                        fit: BoxFit.contain, // 图片填充方式
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            SizedBox(height: 16),
-            Text(
-              'Your text here', // 可选的文本内容
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+            SizedBox(height: 106/3.5),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10), // 圆角半径
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2), // 阴影颜色和透明度
+                    spreadRadius: 2, // 阴影扩散半径
+                    blurRadius: 5, // 阴影模糊半径
+                    offset: Offset(0, 2), // 阴影偏移量
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10), // 图片的圆角半径
+                child: Image.asset(
+                  'assets/touhuanpeidaijieshao.png', // 图片路径
+                  width: 1286 / 3.5,
+                  height: 987 / 3.5,
+                  fit: BoxFit.cover, // 图片填充方式
+                ),
               ),
             ),
             // 可以在这里添加其他的文本或小部件

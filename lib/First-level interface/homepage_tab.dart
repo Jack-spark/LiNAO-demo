@@ -12,6 +12,7 @@ import '../component/Row Drawer with indices.dart';
 import '../component/Row Drawer.dart';
 import '../component/Oval button.dart';
 import '../component/bottom sheet.dart';
+import '../Secondary Interface/bluetooth interface.dart';
 
 class ChallengeDetailPage extends StatelessWidget {
   final String title;
@@ -357,7 +358,10 @@ class _zhuyeTabState extends State<zhuyeTab> {
                                   ),
                                   OvalButton(
                                     onPressed: () {
-
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => lanyaPage()), // LanyaPage 是要跳转的页面
+                                      );
                                     },
                                     child: Text(
                                       '去连接',
