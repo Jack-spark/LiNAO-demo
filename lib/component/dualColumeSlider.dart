@@ -17,8 +17,8 @@ class CustomButtonGrid extends StatelessWidget {
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // 设置为两列
-        crossAxisSpacing: 8, // 列间距
-        mainAxisSpacing: 16, // 行间距
+        crossAxisSpacing: 1/3.5, // 列间距
+        mainAxisSpacing: 58/3.5, // 行间距
       ),
       itemCount: buttonLabels.length,
       itemBuilder: (context, index) {
@@ -42,17 +42,13 @@ class CustomButtonGrid extends StatelessWidget {
 
   Widget _buildButton(BuildContext context, String imagePath, String label) {
     return Container(
-      constraints: BoxConstraints(
-        minWidth: 150,
-        minHeight: 250,
-        maxWidth: MediaQuery.of(context).size.width / 2,
-        maxHeight: 350,
-      ),
+      width: 1000, // 按钮宽度
+      height: 400, // 按钮高度
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         image: DecorationImage(
           image: AssetImage(imagePath),
-          fit: BoxFit.cover,
+          fit: BoxFit.contain,
         ),
       ),
       child: Align(

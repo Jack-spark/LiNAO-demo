@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../../utils.dart';
 import '../../widgets.dart';
-import 'identifying code.dart';
-import 'PasswordInput.dart';
-import 'IndependentCheckbox.dart';
-import '../../component/Oval button.dart';
-import 'package:platform_design/component/bottom sheet.dart';
+import 'identifyingCode.dart';
+import 'passwordInput.dart';
+import 'independentCheckbox.dart';
+import '../../component/ovalButton.dart';
+import 'package:platform_design/component/bottomSheet.dart';
 
 class register extends StatefulWidget {
   static const title = 'register';

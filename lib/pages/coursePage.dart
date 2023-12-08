@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../component/Row Drawer.dart';
-import '../../component/Oval button.dart';
+import '../component/rowSlider.dart';
+import '../component/ovalButton.dart';
 
 class CourseTab extends StatelessWidget {
   static const title = 'course';
@@ -12,6 +12,7 @@ class CourseTab extends StatelessWidget {
 
   Widget _buildBody(BuildContext context) {
     return SafeArea(
+      bottom: true,
       child:SingleChildScrollView(
         child: Column(
           children: [

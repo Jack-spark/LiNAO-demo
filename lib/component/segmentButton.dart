@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Oval button.dart';
+import 'ovalButton.dart';
 // 蓝牙里面的双选按钮
 class DualButtonSelector extends StatefulWidget {
   @override
@@ -101,7 +101,7 @@ class _DualButtonSelectorState extends State<DualButtonSelector> {
     return Visibility(
       visible: leftButtonSelected,
       child: Container(
-        padding: EdgeInsets.all(16.0),
+        padding: EdgeInsets.only(top: 96/3.5),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

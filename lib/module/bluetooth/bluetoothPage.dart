@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platform_design/component/Double Selection Button.dart';
+import 'package:platform_design/component/segmentButton.dart';
 
 
 class lanyaPage extends StatelessWidget {
@@ -20,10 +20,11 @@ class lanyaPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             DualButtonSelector(), // 这里调用你的双选按钮组件
-            SizedBox(height: 96/3.5), // 设置间距
+            // 可以在这里添加其他的文本或小部件
           ],
         ),
       ),
+      bottomNavigationBar: SizedBox.shrink(), // 隐藏底部边框
     );
   }
 }
