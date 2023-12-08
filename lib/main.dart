@@ -1,20 +1,12 @@
-// Copyright 2020 The Flutter team. All rights reserved.
-// Use of this source code is governed by readme BSD-style license that can be
-// found in the LICENSE file.
-
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'pages/meditationPage.dart';
-import 'pages/homePage.dart';
-import 'widgets.dart';
-import 'module/register/register.dart';
-import 'pages/coursePage.dart';
 import 'component/bottomNavBar.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 void main() {
-  runApp(MyApp());
+  initializeDateFormatting().then((_) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -60,7 +52,6 @@ class MyAdaptingApp extends StatelessWidget {
   }
 }
 
-
 class PlatformAdaptingHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -69,4 +60,3 @@ class PlatformAdaptingHomePage extends StatelessWidget {
     );
   }
 }
-

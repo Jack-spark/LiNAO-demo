@@ -9,6 +9,7 @@ import '../pages/homePage.dart';
 import '../widgets.dart';
 import '../module/register/register.dart';
 import '../pages/coursePage.dart';
+import '../pages/userPage.dart';
 
 class BottomNavigation extends StatefulWidget {
   @override
@@ -22,7 +23,7 @@ class _MyHomePageState extends State<BottomNavigation> {
     zhuyeTab(),
     mingxiangTab(),
     CourseTab(),
-    CourseTab(),
+    UserTab(),
   ];
 
   void _onTabTapped(int index) {
