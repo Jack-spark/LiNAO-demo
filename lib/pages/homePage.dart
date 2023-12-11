@@ -12,6 +12,7 @@ import '../component/rowSlider.dart';
 import '../component/ovalButton.dart';
 import '../component/bottomSheet.dart';
 import '../module/bluetooth/bluetoothPage.dart';
+import 'lessonPage.dart';
 
 class zhuyeTab extends StatelessWidget {
   @override
@@ -128,6 +129,7 @@ class zhuyeTab extends StatelessWidget {
                     'assets/b2.png',
                   ],
                   buttonDetailPages: [
+                    LessonPage(),
 
                   ],
                   containerHeight: 632/3.5, // 设置容器高度
