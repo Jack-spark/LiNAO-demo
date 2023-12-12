@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import '../component/calendar.dart';
 import '../component/ovalButton.dart';
 
+import 'package:platform_design/module/scoreSwitch/scoreSwitch.dart';
+
 class UserTab extends StatefulWidget {
   static const title = 'user';
 
@@ -145,8 +147,52 @@ class _UserTabState extends State<UserTab> {
                   width: 1286 / 3.5,
                   height: 1344 / 3.5,
                   child: TableBasicsExample(), // 日历表
-                ),
+                ), //日历表
                 SizedBox(height: 104 / 3.5),
+                OvalButton(
+                  width: 1286 / 3.5,
+                  height: 194 / 3.5,
+                  color: Color(0xFF3DE1B7),
+                  child: Center(
+                    child: Text(
+                      '查看全部报告',
+                      style: TextStyle(
+                        fontSize: 61 / 3.5,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFFFFFFFF),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 115 / 3.5),
+                Divider(
+                  indent: 77 / 3.5,
+                  endIndent: 77 / 3.5,
+                  thickness: 2,
+                  color: Color(0xFFDBDCDD),
+                ),
+                SizedBox(height: 115 / 3.5),
+                scoreSwitch(
+                  title: '练习时长及状态',
+                  leftButtonText: '周',
+                  middleButtonText: '月',
+                  rightButtonText: '年',
+                ),
+                SizedBox(height: 115 / 3.5),
+                Divider(
+                  indent: 77 / 3.5,
+                  endIndent: 77 / 3.5,
+                  thickness: 2,
+                  color: Color(0xFFDBDCDD),
+                ),
+                SizedBox(height: 115 / 3.5),
+                scoreSwitch(
+                  title: '近期冥想表现',
+                  leftButtonText: '近7次',
+                  middleButtonText: '近15次',
+                  rightButtonText: '近30次',
+                ),
+                SizedBox(height: 115 / 3.5),
                 // Expanded(
                 //   child: Container(),
                 // ),

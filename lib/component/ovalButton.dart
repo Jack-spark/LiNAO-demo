@@ -7,6 +7,7 @@ class OvalButton extends StatelessWidget {
   final double height;
   final Color color;
   final double ? Radius;
+  final List<BoxShadow> ? boxShadow;
   const OvalButton({
     Key? key,
     this.onPressed,
@@ -15,6 +16,7 @@ class OvalButton extends StatelessWidget {
     this.height = 60,
     this.color = Colors.blue,
     this.Radius = 60 / 2,
+    this.boxShadow,
   }) : super(key: key);
 
   @override
@@ -27,6 +29,7 @@ class OvalButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(Radius!),
+          boxShadow: boxShadow,
         ),
         alignment: Alignment.center,
         child: child,
