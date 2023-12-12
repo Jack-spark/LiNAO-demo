@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../module/bluetooth/bluetoothPage.dart';
 import 'ovalButton.dart';
 // 底部弹出的浮窗
-void showCustomBottomSheet(BuildContext context) {
+void showCustomBottomSheet1(BuildContext context) {
   // 在需要点击弹出底部浮窗的组件里，ontap事件里面调用showCustomBottomSheet方法
   showModalBottomSheet(
     context: context,
@@ -20,7 +20,7 @@ void showCustomBottomSheet(BuildContext context) {
           children: [
             SizedBox(height:20),
             Text(
-              '您的头环未连接，请连接后加入',
+              '您的头环未连接，请连接后创建',
               style: TextStyle(fontSize: 61/3.5,letterSpacing: 2/3.5),
             ),
             SizedBox(height:20),
@@ -52,16 +52,13 @@ void showCustomBottomSheet(BuildContext context) {
                   ),
                   OvalButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => lanyaPage()), // LanyaPage 是要跳转的页面
-                      );
+
                     },
                     child: Text(
                       '去连接',
                       style: TextStyle(color: Colors.white),
                     ),
-                    width: 614/3.5,
+                    width: 595/3.5,
                     height: 184/3.5,
                     color: Colors.cyan,
                   ),
@@ -69,7 +66,7 @@ void showCustomBottomSheet(BuildContext context) {
               ),
             ),
           ],
-        ), // 传入的自定义内容
+        ),// 传入的自定义内容
       );
     },
   );

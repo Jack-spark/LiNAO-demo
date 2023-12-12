@@ -11,6 +11,7 @@ import '../component/rowSubscriptedSlider.dart';
 import '../component/rowSlider.dart';
 import '../component/ovalButton.dart';
 import '../component/bottomSheet.dart';
+import '../component/bottomSheet1.dart';
 import '../module/bluetooth/bluetoothPage.dart';
 import 'lessonPage.dart';
 
@@ -161,59 +162,8 @@ class zhuyeTab extends StatelessWidget {
 
                   OvalButton(
                     onPressed: () {
-                      showCustomBottomSheet(
+                      showCustomBottomSheet1(
                         context,
-                        Column(
-                          children: [
-                            SizedBox(height:20),
-                            Text(
-                              '您的头环未连接，请连接后创建',
-                              style: TextStyle(fontSize: 61/3.5,letterSpacing: 2/3.5),
-                            ),
-                            SizedBox(height:20),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Colors.black, // 设置边框颜色
-                                        width: 0.7, // 设置边框宽度
-                                      ),
-                                      borderRadius: BorderRadius.circular(25), // 设置圆角半径为按钮高度的一半
-                                    ),
-                                    child: OvalButton(
-                                      onPressed: () {
-                                        Navigator.pop(context); // 按钮被点击时的操作
-                                      },
-                                      child: Text(
-                                        '取消',
-                                        style: TextStyle(color: Colors.black),
-                                      ),
-                                      width: 595/3.5,
-                                      height: 184/3.5,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  OvalButton(
-                                    onPressed: () {
-
-                                    },
-                                    child: Text(
-                                      '去连接',
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                    width: 595/3.5,
-                                    height: 184/3.5,
-                                    color: Colors.cyan,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
                       );
                     },
                     child: Text(
@@ -231,60 +181,6 @@ class zhuyeTab extends StatelessWidget {
                     onPressed: () {
                       showCustomBottomSheet(
                         context,
-                        Column(
-                          children: [
-                            SizedBox(height:20),
-                            Text(
-                              '您的头环未连接，请连接后加入',
-                              style: TextStyle(fontSize: 61/3.5,letterSpacing: 2/3.5),
-                            ),
-                            SizedBox(height:20),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Colors.black, // 设置边框颜色
-                                        width: 0.7, // 设置边框宽度
-                                      ),
-                                      borderRadius: BorderRadius.circular(25), // 设置圆角半径为按钮高度的一半
-                                    ),
-                                    child: OvalButton(
-                                      onPressed: () {
-                                        Navigator.pop(context); // 按钮被点击时的操作
-                                      },
-                                      child: Text(
-                                        '取消',
-                                        style: TextStyle(color: Colors.black),
-                                      ),
-                                      width: 595/3.5,
-                                      height: 184/3.5,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  OvalButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => lanyaPage()), // LanyaPage 是要跳转的页面
-                                      );
-                                    },
-                                    child: Text(
-                                      '去连接',
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                    width: 614/3.5,
-                                    height: 184/3.5,
-                                    color: Colors.cyan,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
                       );
                       // 第二个按钮被点击时执行的操作
                     },
