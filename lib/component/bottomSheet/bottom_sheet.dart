@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../module/bluetooth/bluetoothPage.dart';
-import '../ovalButton.dart';
+import '../../module/bluetooth/bluetooth_page.dart';
+import '../oval_button.dart';
 // 底部弹出的浮窗
 void showCustomBottomSheet(BuildContext context) {
   // 在需要点击弹出底部浮窗的组件里，ontap事件里面调用showCustomBottomSheet方法

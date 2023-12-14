@@ -1,13 +1,13 @@
 ///创建statefulWidget groupLessonPage
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import '../component/segmentButton/participateSegmentButton.dart';
-import '../component/segmentButton/timeSegmentButton.dart';
-import '../component/segmentButton/difficultySegmentButton.dart';
-import '../component/slider/threeColumeSlider.dart';
-import 'individualMeditationCourse.dart';
-import '../component/segmentButton/feedbackSegmentButton.dart';
-import '../component/segmentButton/frequencySegmentButton.dart';
+import '../component/segmentButton/participate_segment_button.dart';
+import '../component/segmentButton/time_segment_button.dart';
+import '../component/segmentButton/difficulty_segment_button.dart';
+import '../component/slider/three_colume_slider.dart';
+import 'individualMeditationCourse_page.dart';
+import '../component/segmentButton/feedback_segment_button.dart';
+import '../component/segmentButton/frequency_segment_button.dart';
 
 class groupLessonPage extends StatefulWidget {
   @override

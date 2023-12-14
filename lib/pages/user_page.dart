@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../component/calendar.dart';
-import '../component/ovalButton.dart';
+import '../component/oval_button.dart';
 
 import 'package:platform_design/module/scoreSwitch/scoreSwitch.dart';
 

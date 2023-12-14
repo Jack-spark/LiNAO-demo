@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../ovalButton.dart';
-import '../segmentButton/difficultySegmentButton.dart';
-import '../segmentButton/timeSegmentButton.dart';
-import '../ovalButton.dart';
+import '../oval_button.dart';
+import '../segmentButton/difficulty_segment_button.dart';
+import '../segmentButton/time_segment_button.dart';
+import '../oval_button.dart';
 // 底部弹出的浮窗
 void showCustomBottomSheet(BuildContext context) {
 

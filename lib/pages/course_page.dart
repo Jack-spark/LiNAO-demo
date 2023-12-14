@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../component/slider/rowSlider.dart';
-import '../component/ovalButton.dart';
+import '../component/slider/row_slider.dart';
+import '../component/oval_button.dart';
 
 class CourseTab extends StatelessWidget {
   static const title = 'course';

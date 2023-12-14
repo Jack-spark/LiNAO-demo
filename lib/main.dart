@@ -2,7 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'component/bottomNavBar.dart';
+import 'component/bottom_nav_bar.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 void main() {

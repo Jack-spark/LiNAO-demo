@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../module/bluetooth/bluetoothPage.dart';
-import '../ovalButton.dart';
+import '../../module/bluetooth/bluetooth_page.dart';
+import '../oval_button.dart';
 
 // 底部弹出的浮窗
 void showCustomBottomSheet1(BuildContext context) {

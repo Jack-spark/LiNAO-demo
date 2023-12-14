@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../ovalButton.dart';
+import '../oval_button.dart';
 // 蓝牙里面的双选按钮
 class DualButtonSelector5 extends StatefulWidget {
   @override

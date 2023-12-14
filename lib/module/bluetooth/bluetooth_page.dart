@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platform_design/component/segmentButton/segmentButton.dart';
+import 'package:platform_design/component/segmentButton/segment_button.dart';
 
 
 class lanyaPage extends StatelessWidget {

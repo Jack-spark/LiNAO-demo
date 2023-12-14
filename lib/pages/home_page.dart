@@ -7,14 +7,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets.dart';
-import '../component/slider/rowSubscriptedSlider.dart';
-import '../component/slider/rowSlider.dart';
-import '../component/ovalButton.dart';
-import '../component/bottomSheet/bottomSheet.dart';
-import '../component/bottomSheet/bottomSheet1.dart';
-import '../module/bluetooth/bluetoothPage.dart';
-import 'individualMeditationCourse.dart';
-import 'groupMeditationCoursePage.dart';
+import '../component/slider/row_subscripted_slider.dart';
+import '../component/slider/row_slider.dart';
+import '../component/oval_button.dart';
+import '../component/bottomSheet/bottom_sheet.dart';
+import '../component/bottomSheet/bottom_sheet1.dart';
+import '../module/bluetooth/bluetooth_page.dart';
+import 'individualMeditationCourse_page.dart';
+import 'groupMeditationCourse_page.dart';
 
 class zhuyeTab extends StatefulWidget {
   @override

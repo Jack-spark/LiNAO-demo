@@ -3,13 +3,13 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../pages/meditationPage.dart';
+import '../pages/meditation_page.dart';
 
-import '../pages/homePage.dart';
+import '../pages/home_page.dart';
 import '../widgets.dart';
 import '../module/register/register.dart';
-import '../pages/coursePage.dart';
-import '../pages/userPage.dart';
+import '../pages/course_page.dart';
+import '../pages/user_page.dart';
 
 class BottomNavigation extends StatefulWidget {
   @override

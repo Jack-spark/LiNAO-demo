@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:platform_design/component/calendar.dart';
-import 'package:platform_design/component/ovalButton.dart';
+import 'package:platform_design/component/oval_button.dart';
 import 'package:get/get.dart';
 import 'package:platform_design/module/scoreSwitch/lineChart.dart';
 

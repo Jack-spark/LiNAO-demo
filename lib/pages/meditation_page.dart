@@ -8,9 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
 import '../widgets.dart';
-import '../component/slider/columeSlider.dart';
-import '../module/bluetooth/bluetoothPage.dart';
-import 'individualMeditationCourse.dart';
+import '../component/slider/colume_slider.dart';
+import '../module/bluetooth/bluetooth_page.dart';
+import 'individualMeditationCourse_page.dart';
 
 class mingxiangTab extends StatelessWidget {
   @override
