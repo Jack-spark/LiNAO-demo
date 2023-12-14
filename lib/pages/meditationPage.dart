@@ -8,8 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
 import '../widgets.dart';
-import '../component/columeSlider.dart';
+import '../component/slider/columeSlider.dart';
 import '../module/bluetooth/bluetoothPage.dart';
+import 'individualMeditationCourse.dart';
 
 class mingxiangTab extends StatelessWidget {
   @override
@@ -60,7 +61,9 @@ class mingxiangTab extends StatelessWidget {
             // Add more image paths as needed
           ],
           buttonDetailPages: [
-            // Add corresponding detail pages as needed
+            LessonPage(),
+            LessonPage(),
+            LessonPage(),
           ],
         ),
       ),

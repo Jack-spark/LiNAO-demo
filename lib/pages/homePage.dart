@@ -7,15 +7,26 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets.dart';
-import '../component/rowSubscriptedSlider.dart';
-import '../component/rowSlider.dart';
+import '../component/slider/rowSubscriptedSlider.dart';
+import '../component/slider/rowSlider.dart';
 import '../component/ovalButton.dart';
-import '../component/bottomSheet.dart';
-import '../component/bottomSheet1.dart';
+import '../component/bottomSheet/bottomSheet.dart';
+import '../component/bottomSheet/bottomSheet1.dart';
 import '../module/bluetooth/bluetoothPage.dart';
-import 'lessonPage.dart';
+import 'individualMeditationCourse.dart';
+import 'groupMeditationCoursePage.dart';
 
-class zhuyeTab extends StatelessWidget {
+class zhuyeTab extends StatefulWidget {
+  @override
+  _zhuyeTabState createState() => _zhuyeTabState();
+}
+
+class _zhuyeTabState extends State<zhuyeTab> {
+  // bool isConnected = false; // 模拟头环连接状态
+  // bool isWorn = false; // 模拟头环佩戴状态
+  bool isConnected = true; // 模拟头环连接状态
+  bool isWorn = true; // 模拟头环佩戴状态
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,31 +81,73 @@ class zhuyeTab extends StatelessWidget {
                     'assets/a3.png',
                   ],
                   buttonDetailPages: [
-
+                    LessonPage(),
+                    LessonPage(),
+                    LessonPage(),
                   ],
                 ),
               ),
-              OvalButton(
-                onPressed: () {
-                  // 第一个按钮被点击时执行的操作
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      '头环未连接，进入连接指引  ',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Image.asset(
-                      'assets/touhuan.png',
-                      width: 60, // 调整图标的宽度
-                      height: 60, // 调整图标的高度
-                    ),
-                  ],
+              Visibility(
+                visible: !isConnected, // 当头环未连接时显示
+                child: OvalButton(
+                  onPressed: () {
+                    // 执行头环未连接时的操作
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => lanyaPage()), // 将 BluetoothSettingsPage 替换为您的蓝牙设置页面
+                    );
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '头环未连接，进入连接指引',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Image.asset(
+                        'assets/touhuan.png',
+                        width: 60,
+                        height: 60,
+                      ),
+                    ],
+                  ),
+                  width: 350,
+                  height: 50,
+                  color: Colors.cyan,
                 ),
-                width: 350,
-                height: 50,
-                color: Colors.cyan,
+              ),
+              Visibility(
+                visible: isConnected && !isWorn, // 当头环已连接但未佩戴时显示
+                child: OvalButton(
+                  onPressed: () {
+                    // 执行头环未佩戴时的操作
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => lanyaPage()), // 将 BluetoothSettingsPage 替换为您的蓝牙设置页面
+                    );
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '头环未佩戴，进入佩戴指引',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Image.asset(
+                        'assets/touhuan.png',
+                        width: 60,
+                        height: 60,
+                      ),
+                    ],
+                  ),
+                  width: 350,
+                  height: 50,
+                  color: Colors.cyan,
+                ),
+              ),
+              Visibility(
+                visible: isConnected && isWorn, // 当头环已连接且已佩戴时隐藏按钮
+                child: SizedBox.shrink(),
               ),
               SizedBox(height: 96/3.5),
               Row(
@@ -131,7 +184,8 @@ class zhuyeTab extends StatelessWidget {
                   ],
                   buttonDetailPages: [
                     LessonPage(),
-
+                    LessonPage(),
+                    LessonPage(),
                   ],
                   containerHeight: 632/3.5, // 设置容器高度
                   containerWidth: 518/3.5, // 设置容器宽度
@@ -162,16 +216,23 @@ class zhuyeTab extends StatelessWidget {
 
                   OvalButton(
                     onPressed: () {
-                      showCustomBottomSheet1(
-                        context,
-                      );
+                      if (!isConnected) {
+                        showCustomBottomSheet1(context);
+                      } else if (isConnected && !isWorn) {
+                        showCustomBottomSheet(context);
+                      } else if (isConnected && isWorn) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => groupLessonPage()), // 替换为您的 GroupLsoonPage 页面
+                        );
+                      }
                     },
                     child: Text(
                       '创建房间',
                       style: TextStyle(color: Colors.white),
                     ),
-                    width: 614/3.5,
-                    height: 169/3.5,
+                    width: 614 / 3.5,
+                    height: 169 / 3.5,
                     color: Colors.cyan,
                   ),
 

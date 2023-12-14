@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../component/classBottomSheet.dart';
+import '../component/bottomSheet/courseBottomSheet.dart';
 
 class LessonPage extends StatefulWidget {
   @override

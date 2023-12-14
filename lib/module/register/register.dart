@@ -6,7 +6,7 @@ import 'identifyingCode.dart';
 import 'passwordInput.dart';
 import 'independentCheckbox.dart';
 import '../../component/ovalButton.dart';
-import 'package:platform_design/component/bottomSheet.dart';
+import 'package:platform_design/component/bottomSheet/bottomSheet.dart';
 
 class register extends StatefulWidget {
   static const title = 'register';

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'ovalButton.dart';
-import 'lessonSegmentButton.dart';
-import 'timeSegmentButton.dart';
-import 'ovalButton.dart';
+import '../ovalButton.dart';
+import '../segmentButton/difficultySegmentButton.dart';
+import '../segmentButton/timeSegmentButton.dart';
+import '../ovalButton.dart';
 // 底部弹出的浮窗
 void showCustomBottomSheet(BuildContext context) {
 
@@ -34,7 +34,7 @@ void showCustomBottomSheet(BuildContext context) {
                     style: TextStyle(color:Colors.grey, fontSize: 46/3.5,letterSpacing: 2/3.5),
                   ),
                   SizedBox(width:35/3.5),
-                  DualButtonSelector(),
+                  DualButtonSelector1(),
                 ],
               ),
             ),
@@ -58,7 +58,7 @@ void showCustomBottomSheet(BuildContext context) {
                     style: TextStyle(color:Colors.grey, fontSize: 46/3.5,letterSpacing: 2/3.5),
                   ),
                   SizedBox(width:35/3.5),
-                  DualButtonSelector1(),
+                  DualButtonSelector4(),
                 ],
               ),
             ),

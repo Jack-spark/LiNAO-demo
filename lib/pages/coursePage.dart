@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../component/rowSlider.dart';
+import '../component/slider/rowSlider.dart';
 import '../component/ovalButton.dart';
 
 class CourseTab extends StatelessWidget {

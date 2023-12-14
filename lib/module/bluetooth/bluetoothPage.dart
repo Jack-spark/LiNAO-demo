@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platform_design/component/segmentButton.dart';
+import 'package:platform_design/component/segmentButton/segmentButton.dart';
 
 
 class lanyaPage extends StatelessWidget {
@@ -19,7 +19,7 @@ class lanyaPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            DualButtonSelector(), // 这里调用你的双选按钮组件
+            DualButtonSelector3(), // 这里调用你的双选按钮组件
             // 可以在这里添加其他的文本或小部件
           ],
         ),

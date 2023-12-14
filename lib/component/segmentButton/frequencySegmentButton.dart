@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'ovalButton.dart';
+import '../ovalButton.dart';
 // 蓝牙里面的双选按钮
-class DualButtonSelector extends StatefulWidget {
+class DualButtonSelector6 extends StatefulWidget {
   @override
   _DualButtonSelectorState createState() => _DualButtonSelectorState();
 }
 
-class _DualButtonSelectorState extends State<DualButtonSelector> {
+class _DualButtonSelectorState extends State<DualButtonSelector6> {
   bool leftButtonSelected = true; // 默认选择左侧按钮
   bool rightButtonSelected = false;
   bool middleButtonSelected = false;
@@ -47,7 +47,7 @@ class _DualButtonSelectorState extends State<DualButtonSelector> {
                   ),
                 ),
                 child: Text(
-                  '高',
+                  '快',
                   style: TextStyle(color: Colors.black, fontSize: 46 / 3.5),
                 ),
               ),
@@ -95,7 +95,7 @@ class _DualButtonSelectorState extends State<DualButtonSelector> {
                   ),
                 ),
                 child: Text(
-                  '低',
+                  '慢',
                   style: TextStyle(color: Colors.black, fontSize: 46/3.5),
                 ),
               ),
